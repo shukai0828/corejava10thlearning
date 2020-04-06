@@ -15,6 +15,18 @@ public class StaticTest {
 			
 			System.out.println("name="+staff.getName()+", salary="+staff.getSalary()+", id="+staff.getId());
 		}
+		System.out.println("*****");
+		
+		Employee.swap(e[0], e[1]);
+		
+		System.out.println("*****");
+		
+		for(Employee staff:e) {
+			staff.setId();
+			
+			System.out.println("name="+staff.getName()+", salary="+staff.getSalary()+", id="+staff.getId());
+		}
+		
 	}
 
 }
@@ -49,8 +61,28 @@ class Employee{
 		nextId++;
 	}
 	
+	public void raiseSalary(int byPercent) {
+		double x = salary * byPercent / 100;
+		salary += x;
+	}
+	
+	public static void tripleSalary(Employee x) {
+		x.raiseSalary(200);
+	}
+	
+	public static void swap(Employee x, Employee y) {
+		Employee tmp;
+		tmp = x;
+		x = y;
+		y = tmp;
+		
+		Employee.tripleSalary(x);
+		Employee.tripleSalary(y);
+	}
+	
 	public static void main(String[] args) {
 		Employee e = new Employee("Tom", 50000);
+		tripleSalary(e);
 		System.out.println(e.getName()+" "+e.getSalary());
 	}
 }
