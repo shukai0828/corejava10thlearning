@@ -9,6 +9,7 @@ public class EnumTest {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter a Size: [SMALL, MEDIUM, LARGE, EXTRA_LARGE]");
 		String input = in.next().toUpperCase();
+		in.close();
 		
 		Size size = Enum.valueOf(Size.class, input);
 		System.out.println("Size = "+size);
