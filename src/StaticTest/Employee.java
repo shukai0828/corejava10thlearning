@@ -1,6 +1,6 @@
 package StaticTest;
 
-class Employee{
+class Employee implements Comparable<Employee>{
 	private static int nextId = 1;
 	
 	private String name;
@@ -28,6 +28,10 @@ class Employee{
 	public void setId() {
 		id = nextId;
 		nextId++;
+	}
+	
+	public int compareTo(Employee other) {
+		return Double.compare(salary, other.getSalary());
 	}
 	
 	public static void main(String[] args) {
