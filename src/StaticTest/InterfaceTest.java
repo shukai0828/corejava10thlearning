@@ -1,16 +1,17 @@
 package StaticTest;
 
-public class StaticTest {
+import java.util.Arrays;
+
+public class InterfaceTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Manager boss = new Manager("Carl", 80000);
-		boss.setBonus(5000);
 		Employee[] e = new Employee[3];
 		
-		e[0] = boss;
+		e[0] = new Employee("Mike", 30000);
 		e[1] = new Employee("Tony", 50000);
 		e[2] = new Employee("Jhon", 40000);
+		
+		Arrays.sort(e);
 		
 		for(Employee staff:e) {
 			staff.setId();
